@@ -1,0 +1,24 @@
+{{!-- <h2>{{title}}</h2> --}}
+
+{{#paper-content class="md-whiteframe-z1 list-demo"}}
+  {{#paper-list}}
+    {{#each user as |item|}}
+      {{#paper-item class="md-3-line" }}
+
+        <img src={{item.avatar}} alt={{item.who}} class="md-avatar">
+        <div class="md-list-item-text" {{action "showUser" item.first_name}} >
+          <h3>{{item.first_name}}</h3>
+          <h4>{{item.last_name}}</h4>
+          <p>
+            {{item.notes}}
+          </p>
+        </div>
+      {{/paper-item}}
+      {{paper-divider}} 
+    {{/each}}
+  {{/paper-list}}
+{{/paper-content}}
+
+<br>
+Fonte: 
+<a href="https://reqres.in">https://reqres.in</a>

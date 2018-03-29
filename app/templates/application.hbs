@@ -1,5 +1,66 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{!-- The following component displays Ember's default welcome message. --}} {{!-- {{welcome-page}} --}} {{!-- Feel free
+to remove this! --}}
 
-{{outlet}}
+
+
+{{!-- {{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-button href=(href-to "index")}}home{{/paper-button}}
+    {{#paper-button href=(href-to "users")}}Users{{/paper-button}}
+  </div>
+{{/paper-toolbar}} --}}
+
+<div style="position: relative">
+{{#paper-sidenav-container }}
+  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2" locked-open="lg" }}
+
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        <div class="logo">
+          <img src="" height="30"/>
+          <strong>Menu</strong>
+        </div>
+      </div>
+    {{/paper-toolbar}}
+
+    {{#paper-content}}
+      {{#paper-list}}
+       
+        {{!-- {{#paper-item action=(transition-to "index")}}Introduction{{/paper-item}}
+        {{#paper-item action=(transition-to "users")}}Another link{{/paper-item}} 
+         --}}
+       
+        {{#paper-button href=(href-to "index")}}home{{/paper-button}}
+        {{paper-divider}}
+        {{#paper-button href=(href-to "users")}}Users{{/paper-button}}
+        {{paper-divider}}
+
+
+    {{!-- <p>Go to My route</p>
+  {{/link-to}} --}}
+
+      {{/paper-list}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  <div layout="column" tabindex="-1" role="main" class="flex">
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        {{#paper-sidenav-toggle as |toggle|}}
+          {{!-- {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}} --}}
+        {{/paper-sidenav-toggle}}
+        {{!-- <span class="md-breadcrumb-page">Title</span> --}}
+      </div>
+    {{/paper-toolbar}}
+  
+  
+    {{#paper-content class="md-padding ember-view md-default-theme"}}
+      {{outlet}}
+    {{/paper-content}}
+
+    </div>
+  
+{{/paper-sidenav-container}}
+</div>
+{{!--  --}}
+
